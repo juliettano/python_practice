@@ -1,0 +1,57 @@
+from tkinter import *
+
+
+def str_to_sort_list(event):
+    s = ent.get()
+    s = s.split()
+    s.sort()
+    lab['text'] = ' '.join(s)
+def multiplicand(event):
+    plus_first = ent_first.get()
+    plus_second = ent_second.get()
+    ent = int(plus_first) + int(plus_second)
+    lab['text'] = ('Результат:', ent)
+def difference(event):
+    plus_first = ent_first.get()
+    plus_second = ent_second.get()
+    ent = int(plus_first) - int(plus_second)
+    lab['text'] = ('Результат:', ent)
+def multiplication(event):
+    plus_first = ent_first.get()
+    plus_second = ent_second.get()
+    ent = int(plus_first) * int(plus_second)
+    lab['text'] = ('Результат:', ent)
+def multiplication(event):
+    plus_first = ent_first.get()
+    plus_second = ent_second.get()
+    ent = int(plus_first) * int(plus_second)
+    lab['text'] = ('Результат:', ent)
+def divided(event):
+    plus_first = ent_first.get()
+    plus_second = ent_second.get()
+    ent = int(plus_first) / int(plus_second)
+    lab['text'] = ('Результат:', ent)
+root = Tk()
+
+ent_first = Entry(width=10)
+ent_second = Entry(width=10)
+but_addition = Button(text="+", width=10)
+but_subtraction = Button(text="-", width=10)
+but_multiplication = Button(text="*", width=10)
+but_division = Button(text="/", width=10)
+lab = Label(width=20, fg='black')
+
+but_addition.bind('<Button-1>', multiplicand)
+but_subtraction.bind('<Button-1>', difference)
+but_multiplication.bind('<Button-1>', multiplication)
+but_division.bind('<Button-1>', divided)
+ent_first.pack()
+ent_second.pack()
+but_addition.pack()
+but_subtraction.pack()
+but_multiplication.pack()
+but_division.pack()
+lab.pack()
+
+root.mainloop()
+#придумать как сделать защиту от дурака, убрать знаки после запятой при делении, попробовать это сделать с помощью объектов
